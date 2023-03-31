@@ -5,7 +5,7 @@
   "main": "functions/server.js",
   "scripts": {
     "dev": "nodemon server-local.js",
-    "build": "netlify-lambda build --config ./webpack.config.js express",
+    "build": "netlify-lambda build --config ./webpack.config.js index",
     "start": "node index.js",
     "start:server": "netlify-lambda serve express"
   },
