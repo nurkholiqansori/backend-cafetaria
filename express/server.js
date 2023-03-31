@@ -11,7 +11,7 @@ const itemRoutes = require("../routes/item");
 require("dotenv/config");
 
 const port = process.env.PORT || 8000;
-const urldb = process.env.MONGODB_URI || "mongodb://localhost:27017/cafetaria";
+const urldb = process.env.MONGODB_URI || "mongodb://localhost:27017/main";
 const allowedOrigins = ["http://localhost:3000", "http://localhost:8000"];
 
 app.use(bodyParser.json());
