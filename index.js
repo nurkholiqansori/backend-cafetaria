@@ -43,7 +43,7 @@ db.mongoose
     console.log("Connection failed & Server not started!");
   });
 
-app.use("/.netlify/functions/server", app);
+app.use("/.netlify/functions/index", app);
 app.use("/", (req, res) => res.sendFile(path.join(__dirname, "../index.html")));
 
 module.exports = app;
