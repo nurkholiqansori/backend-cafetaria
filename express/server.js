@@ -3,11 +3,11 @@ const app = express();
 const router = express.Router();
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const middleware = require("./middleware/verify");
-const db = require("./schemas");
-const authRoutes = require("./routes/auth");
-const orderRoutes = require("./routes/order");
-const itemRoutes = require("./routes/item");
+const middleware = require("../middleware/verify");
+const db = require("../schemas");
+const authRoutes = require("../routes/auth");
+const orderRoutes = require("../routes/order");
+const itemRoutes = require("../routes/item");
 require("dotenv/config");
 
 const port = process.env.PORT || 8000;
@@ -43,7 +43,7 @@ db.mongoose
     console.log("Connection failed & Server not started!");
   });
 
-app.use("/.netlify/functions/index", app);
+app.use("/.netlify/functions/express", app);
 app.use("/", (req, res) => res.sendFile(path.join(__dirname, "../index.html")));
 
 module.exports = app;
