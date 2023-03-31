@@ -42,9 +42,3 @@ db.mongoose
     console.log(e);
     console.log("Connection failed & Server not started!");
   });
-
-app.use("/.netlify/functions/server", app);
-app.use("/", (req, res) => res.sendFile(path.join(__dirname, "../index.html")));
-
-module.exports = app;
-module.exports.handler = serverless(app);
