@@ -3,15 +3,15 @@ const app = express();
 const router = express.Router();
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const middleware = require("./middleware/verify");
-const db = require("./schemas");
-const authRoutes = require("./routes/auth");
-const orderRoutes = require("./routes/order");
-const itemRoutes = require("./routes/item");
+const middleware = require("../middleware/verify");
+const db = require("../schemas");
+const authRoutes = require("../routes/auth");
+const orderRoutes = require("../routes/order");
+const itemRoutes = require("../routes/item");
 require("dotenv/config");
 
 const port = process.env.PORT || 8000;
-const urldb = process.env.MONGODB_URI || "mongodb://localhost:27017/cafetaria";
+const urldb = process.env.MONGODB_URI || "mongodb://localhost:27017/main";
 const allowedOrigins = ["http://localhost:3000", "http://localhost:8000"];
 
 app.use(bodyParser.json());
@@ -42,3 +42,12 @@ db.mongoose
     console.log(e);
     console.log("Connection failed & Server not started!");
   });
+<<<<<<< HEAD:index.js
+=======
+
+app.use("/.netlify/functions/express", app);
+app.use("/", (req, res) => res.sendFile(path.join(__dirname, "../index.html")));
+
+module.exports = app;
+module.exports.handler = serverless(app);
+>>>>>>> 639f00fb0f143df09527f0fdc9fdd9723bfc4942:express/server.js
